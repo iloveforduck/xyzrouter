@@ -6,13 +6,13 @@
 
 [![npm](https://img.shields.io/npm/v/xyzrouter.svg)](https://www.npmjs.com/package/xyzrouter)
 [![Downloads](https://img.shields.io/npm/dm/xyzrouter.svg)](https://www.npmjs.com/package/xyzrouter)
-[![Docker Pulls](https://img.shields.io/docker/pulls/xyz/xyzrouter.svg?logo=docker&label=Docker%20pulls)](https://hub.docker.com/r/xyz/xyzrouter)
-[![GHCR](https://img.shields.io/badge/GHCR-xyz%2Fxyzrouter-blue?logo=github)](https://github.com/xyz/xyzrouter/pkgs/container/xyzrouter)
-[![License](https://img.shields.io/npm/l/xyzrouter.svg)](https://github.com/xyz/xyzrouter/blob/main/LICENSE)
+[![Docker Pulls](https://img.shields.io/docker/pulls/xyz/xyzrouter.svg?logo=docker&label=Docker%20pulls)](https://hub.docker.com/r/iloveforduck/xyzrouter)
+[![GHCR](https://img.shields.io/badge/GHCR-xyz%2Fxyzrouter-blue?logo=github)](https://github.com/iloveforduck/xyzrouter/pkgs/container/xyzrouter)
+[![License](https://img.shields.io/npm/l/xyzrouter.svg)](https://github.com/iloveforduck/xyzrouter/blob/main/LICENSE)
 
 <a href="https://trendshift.io/repositories/22628" target="_blank"><img src="https://trendshift.io/api/badge/repositories/22628" alt="xyz%2Fxyzrouter | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
 
-[🌐 Website](https://xyzrouter.com) • [📖 Full Docs](https://github.com/xyz/xyzrouter)
+[🌐 Website](https://xyzrouter.com) • [📖 Full Docs](https://github.com/iloveforduck/xyzrouter)
 
 ---
 
@@ -55,7 +55,7 @@ docker run -d --name xyzrouter -p 20128:20128 \
   xyz/xyzrouter:latest
 ```
 
-Published images: [Docker Hub](https://hub.docker.com/r/xyz/xyzrouter) • [GHCR](https://github.com/xyz/xyzrouter/pkgs/container/xyzrouter) (multi-platform amd64/arm64).
+Published images: [Docker Hub](https://hub.docker.com/r/iloveforduck/xyzrouter) • [GHCR](https://github.com/iloveforduck/xyzrouter/pkgs/container/xyzrouter) (multi-platform amd64/arm64).
 
 🎉 Dashboard opens at `http://localhost:20128`
 
@@ -200,8 +200,8 @@ Any tool supporting OpenAI/Claude-compatible API works.
 
 Full docs, advanced setup, video tutorials & development guide:
 
-- **GitHub**: https://github.com/xyz/xyzrouter
-- **Full README**: https://github.com/xyz/xyzrouter/blob/master/README.md
+- **GitHub**: https://github.com/iloveforduck/xyzrouter
+- **Full README**: https://github.com/iloveforduck/xyzrouter/blob/master/README.md
 - **Website**: https://xyzrouter.com
 
 ---
