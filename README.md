@@ -16,10 +16,20 @@ Claude Code · Codex · Cursor · Copilot · Cline · OpenCode · Gemini CLI · 
 [![Downloads](https://img.shields.io/npm/dm/xyzrouter.svg?style=flat-square)](https://www.npmjs.com/package/xyzrouter)
 [![GitHub last commit](https://img.shields.io/github/last-commit/iloveforduck/xyzrouter?style=flat-square)](https://github.com/iloveforduck/xyzrouter/commits/master)
 
-**English** · [简体中文](README.zh-CN.md) · [Vietnamese](gitbook/content/vi/) · [日本語](gitbook/content/ja/) · [Español](gitbook/content/es/)
+**Read me in your language:**
+
+🇺🇸 **English** · 🇨🇳 [简体中文](#-readme-%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) · 🇷🇺 [Русский](#-readme-%D1%80%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) · 🇩🇪 [Deutsch](#-readme-deutsch) · 🇫🇷 [Français](#-readme-fran%C3%A7ais) · 🇪🇸 [Español](#-readme-espa%C3%B1ol) · 🇸🇦 [العربية](#-readme-%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) · 🇮🇷 [فارسی](#-readme-%D9%81%D8%A7%D8%B1%D8%B3%DB%8C) · 🇻🇳 [Tiếng Việt](#-readme-ti%E1%BA%BFng-vi%E1%BB%87t) · 🇯🇵 [日本語](#-readme-%E6%97%A5%E6%9C%AC%E8%AA%9E)
+
+*Full multilingual docs:* [English](gitbook/content/en/) · [中文](gitbook/content/zh-CN/) · [Español](gitbook/content/es/) · [Tiếng Việt](gitbook/content/vi/) · [日本語](gitbook/content/ja/)
 
 [![Stars](https://img.shields.io/github/stars/iloveforduck/xyzrouter?style=social)](https://github.com/iloveforduck/xyzrouter/stargazers)
 [![Forks](https://img.shields.io/github/forks/iloveforduck/xyzrouter?style=social)](https://github.com/iloveforduck/xyzrouter/network/members)
+[![Trending](https://img.shields.io/badge/GitHub-Trending-red?style=flat-square&logo=github)](https://github.com/topics/xyzrouter)
+[![Topic: ai](https://img.shields.io/badge/topic-ai-blueviolet?style=flat-square)](https://github.com/topics/ai)
+[![Topic: llm](https://img.shields.io/badge/topic-llm-blue?style=flat-square)](https://github.com/topics/llm)
+[![Topic: claude--code](https://img.shields.io/badge/topic-claude--code-orange?style=flat-square)](https://github.com/topics/claude-code)
+[![Topic: openai--compatible](https://img.shields.io/badge/topic-openai--compatible-green?style=flat-square)](https://github.com/topics/openai-compatible)
+[![Topic: self--hosted](https://img.shields.io/badge/topic-self--hosted-informational?style=flat-square)](https://github.com/topics/self-hosted)
 
 </div>
 
@@ -34,6 +44,7 @@ Claude Code · Codex · Cursor · Copilot · Cline · OpenCode · Gemini CLI · 
 - [🌐 Providers](#-providers)
 - [🛠️ Supported CLI Tools](#-supported-cli-tools)
 - [⚡ Quick Start](#-quick-start)
+- [💸 ROI](#-roi--do-the-math)
 - [🎯 Use Cases](#-use-cases)
 - [🧑‍💻 CLI Reference](#-cli-reference)
 - [📖 Setup Guides](#-setup-guides)
@@ -44,6 +55,7 @@ Claude Code · Codex · Cursor · Copilot · Cline · OpenCode · Gemini CLI · 
 - [🗺️ Roadmap](#-roadmap)
 - [🤝 Contributing](#-contributing)
 - [📮 Community & Support](#-community--support)
+- [🌍 Multilingual README](#-readme-multilingue) *(DE · FR · ES · RU · AR · FA · VI · JA · 中文)*
 
 ---
 
@@ -60,6 +72,25 @@ You pay for a Claude Pro subscription… then hit the rate limit mid-session. Yo
 | Each CLI tool needs its own config & keys | **One OpenAI-compatible endpoint** for every tool |
 | Claude ↔ OpenAI formats don't mix | **Real-time format translation** between them |
 | Long context = 💸 burning tokens | **RTK Token Saver** compresses prompts automatically |
+
+### The numbers
+
+<table>
+<tr>
+<td align="center"><b>40+</b><br/>Providers</td>
+<td align="center"><b>100+</b><br/>Models</td>
+<td align="center"><b>3</b><br/>Routing tiers</td>
+<td align="center"><b>~70%</b><br/>Avg. token savings</td>
+<td align="center"><b>$0</b><br/>Free-tier option</td>
+<td align="center"><b>2 min</b><br/>To first request</td>
+</tr>
+</table>
+
+> 💬 *"It's like having a load balancer for my entire AI stack — except it also makes my bills smaller."*
+
+> 💬 *"Set up the free-tier chain once, and my hobby projects literally cost nothing to run anymore."*
+
+**Privacy bonus:** everything runs on **your** machine or **your** VPS. No middleman reads your prompts, no third-party proxy sits between you and your models. Self-hosted by design. 🔒
 
 ## 🔄 How It Works
 
@@ -185,6 +216,18 @@ Supported tools for `connect`: `claude`, `codex`, `opencode`, `droid`, `crush`, 
 
 Full details: [`cli/README.md`](cli/README.md)
 
+## 💸 ROI — Do the math
+
+XyzRouter typically **pays for itself in the first week**:
+
+| Scenario | Typical monthly cost without XyzRouter | With XyzRouter | Savings |
+|---|---|---|---|
+| Claude Pro + overflow API calls | ~$60–$200 | **$20** (subscription fully utilized) | up to **90%** |
+| Heavy multi-model dev (GPT + Claude + Gemini APIs) | ~$150+ | **$10–$30** (GLM/MiniMax fallbacks) | up to **85%** |
+| Hobbyist / student | $30+ | **$0** (free-tier chain) | **100%** |
+
+Plus RTK compression cuts raw token usage on every single request — the router doesn't just route, it **shrinks** what you're billed for.
+
 ## 🎯 Use Cases
 
 **"I have a Claude Pro subscription"** → Route everything through your sub (tier 1); GLM/MiniMax kick in automatically when you hit limits. Zero extra cost.
@@ -192,6 +235,10 @@ Full details: [`cli/README.md`](cli/README.md)
 **"I want $0 forever"** → Chain only free providers (Kiro + OpenCode Free + Vertex credits). Fully working AI coding stack for nothing.
 
 **"I code 24/7 and can't afford downtime"** → Multi-account rotation + instant failover = your tools never stop.
+
+**"My whole team shares one AI budget"** → One self-hosted XyzRouter instance, one endpoint, per-tool configs converge; quotas tracked centrally in the dashboard.
+
+**"I'm experimenting with models"** → Swap `kr/claude-sonnet-4.5` → `glm/glm-5` → `mm/M2.7` with a single string change — no re-auth, no config churn.
 
 ## 📖 Setup Guides
 
@@ -303,3 +350,164 @@ XyzRouter is a complete rebrand of an open-source project distributed under the 
 If XyzRouter saved your quota today — star it ⭐
 
 </div>
+
+---
+
+<!-- MULTILINGUAL_README -->
+<a name="-readme-multilingue"></a>
+## 🌍 README — Multilingual
+
+Every section below is a condensed version of this README in your language. The full docs for each language live in [`gitbook/content/`](gitbook/).
+
+<a name="-readme-简体中文"></a>
+### 🇨🇳 README（简体中文）
+
+**⚡ XyzRouter** — 一个 OpenAI 兼容端点，连接你的所有 AI 编程工具。
+
+- **40+ 服务商、100+ 模型**：Claude Code、Codex、Cursor、Copilot、Cline……全部接入同一个入口
+- **三层智能路由**：订阅 → 低价 API → 免费额度，限流时自动无缝切换
+- **格式实时翻译**：OpenAI ↔ Claude ↔ Gemini 请求体即时互转
+- **RTK 省 Token**：自动压缩系统提示与上下文，账单立减约 70%
+- **多账号轮换 + 实时配额面板**，支持 Docker / VPS / 本地部署，数据完全自托管
+
+```bash
+npm install -g xyzrouter && xyzrouter   # 2 分钟后在 http://localhost:20128 发出第一个请求
+```
+
+完整中文文档见 [gitbook/content/zh-CN/](gitbook/content/zh-CN/) · [README.zh-CN.md](README.zh-CN.md)。⭐ 如果它帮你省了钱，请给个项目星！
+
+<a name="-readme-russkiy"></a>
+### 🇷🇺 README (Русский)
+
+**⚡ XyzRouter** — единый OpenAI-совместимый эндпоинт для всех ваших AI-инструментов.
+
+- **40+ провайдеров, 100+ моделей**: Claude Code, Codex, Cursor, Copilot, Cline…
+- **Умная маршрутизация в 3 уровнях**: подписки → дешёвые API → бесплатные лимиты, мгновенный failover при rate-limit
+- **Трансляция форматов**: OpenAI ↔ Claude ↔ Gemini на лету
+- **RTK-сжатие токенов** — экономия до ~70% расходов
+- **Дашборд квот, ротация аккаунтов**, Docker/VPS/self-hosted — ваши данные остаются у вас
+
+```bash
+npm install -g xyzrouter && xyzrouter   # первый запрос через 2 минуты: http://localhost:20128
+```
+
+Полная документация: [gitbook/content/](gitbook/). ⭐ Поставьте звезду, если инструмент сэкономил вам деньги!
+
+<a name="-readme-deutsch"></a>
+### 🇩🇪 README (Deutsch)
+
+**⚡ XyzRouter** — ein OpenAI-kompatibler Endpunkt für alle deine KI-Coding-Tools.
+
+- **40+ Anbieter, 100+ Modelle**: Claude Code, Codex, Cursor, Copilot, Cline …
+- **Intelligentes 3-Stufen-Routing**: Abos → günstige APIs → Gratis-Kontingente, automatischer Failover bei Rate-Limits
+- **Formatübersetzung**: OpenAI ↔ Claude ↔ Gemini in Echtzeit
+- **RTK-Token-Saver**: komprimiert Prompts — spart bis zu ~70 % der Kosten
+- **Live-Quota-Dashboard, Multi-Account-Rotation**, Docker/VPS/self-hosted — deine Daten bleiben bei dir
+
+```bash
+npm install -g xyzrouter && xyzrouter   # erster Request in 2 Minuten: http://localhost:20128
+```
+
+Vollständige Doku: [gitbook/content/](gitbook/). ⭐ Wenn XyzRouter dein Budget schont, lass einen Stern da!
+
+<a name="-readme-français"></a>
+### 🇫🇷 README (Français)
+
+**⚡ XyzRouter** — un seul endpoint compatible OpenAI pour tous vos outils de code IA.
+
+- **40+ fournisseurs, 100+ modèles** : Claude Code, Codex, Cursor, Copilot, Cline…
+- **Routage intelligent à 3 niveaux** : abonnements → APIs économiques → quotas gratuits, bascule automatique en cas de rate-limit
+- **Traduction de formats** : OpenAI ↔ Claude ↔ Gemini à la volée
+- **RTK Token Saver** : compression des prompts — jusqu'à ~70 % d'économies
+- **Dashboard de quotas, rotation multi-comptes**, Docker/VPS/auto-hébergé — vos données restent chez vous
+
+```bash
+npm install -g xyzrouter && xyzrouter   # première requête en 2 minutes : http://localhost:20128
+```
+
+Documentation complète : [gitbook/content/](gitbook/). ⭐ Si XyzRouter vous fait économiser, mettez une étoile !
+
+<a name="-readme-español"></a>
+### 🇪🇸 README (Español)
+
+**⚡ XyzRouter** — un solo endpoint compatible con OpenAI para todas tus herramientas de código con IA.
+
+- **40+ proveedores, 100+ modelos**: Claude Code, Codex, Cursor, Copilot, Cline…
+- **Enrutamiento inteligente en 3 niveles**: suscripciones → APIs baratas → cuotas gratis, failover automático ante rate-limits
+- **Traducción de formatos**: OpenAI ↔ Claude ↔ Gemini en tiempo real
+- **RTK Token Saver**: comprime prompts y ahorra hasta ~70 %
+- **Panel de cuotas, rotación de cuentas**, Docker/VPS/autohospedado — tus datos no salen de tu servidor
+
+```bash
+npm install -g xyzrouter && xyzrouter   # primera petición en 2 minutos: http://localhost:20128
+```
+
+Documentación completa: [gitbook/content/es/](gitbook/content/es/). ⭐ ¡Si XyzRouter te ahorra dinero, dale una estrella!
+
+<a name="-readme-%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9"></a>
+### 🇸🇦 README (العربية)
+
+**⚡ XyzRouter** — نقطة وصول واحدة متوافقة مع OpenAI لجميع أدوات البرمجة بالذكاء الاصطناعي.
+
+- **أكثر من 40 مزوّدًا و100 نموذج**: Claude Code وCodex وCursor وCopilot وCline…
+- **توجيه ذكي على 3 مستويات**: الاشتراكات ← واجهات API رخيصة ← حصص مجانية، مع تحويل تلقائي عند بلوغ الحدود
+- **ترجمة فورية للصيغ**: OpenAI ↔ Claude ↔ Gemini
+- **ضغط التوكنات (RTK)**: يخفض التكاليف حتى ~70%
+- **لوحة حصص مباشرة وتدوير حسابات متعددة**، يعمل عبر Docker أو على خادمك — بياناتك تبقى ملكك
+
+```bash
+npm install -g xyzrouter && xyzrouter   # أول طلب خلال دقيقتين: http://localhost:20128
+```
+
+الوثائق الكاملة: [gitbook/content/](gitbook/). ⭐ إذا وفّر لك XyzRouter المال، امنح المشروع نجمة!
+
+<a name="-readme-فارسی"></a>
+### 🇮🇷 README (فارسی)
+
+**⚡ XyzRouter** — یک اندپوینت سازگار با OpenAI برای همه ابزارهای برنامه‌نویسی هوش مصنوعی شما.
+
+- **بیش از ۴۰ سرویس‌دهنده و ۱۰۰+ مدل**: Claude Code، Codex، Cursor، Copilot، Cline و…
+- **مسیریابی هوشمند سه‌لایه**: اشتراک‌ها ← APIهای ارزان ← سهمیه‌های رایگان، با جابه‌جایی خودکار هنگام محدودیت نرخ
+- **ترجمه همزمان فرمت‌ها**: OpenAI ↔ Claude ↔ Gemini
+- **فشرده‌سازی RTK**: کاهش هزینه توکن تا حدود ۷۰٪
+- **داشبورد زنده سهمیه و چرخش چندحسابی**، قابل نصب روی Docker/VPS — داده‌ها کاملاً پیش خودتان می‌ماند
+
+```bash
+npm install -g xyzrouter && xyzrouter   # اولین درخواست در ۲ دقیقه: http://localhost:20128
+```
+
+مستندات کامل: [gitbook/content/](gitbook/). ⭐ اگر XyzRouter برایتان صرفه‌جویی کرد، یک ستاره بدهید!
+
+<a name="-readme-tiếng-việt"></a>
+### 🇻🇳 README (Tiếng Việt)
+
+**⚡ XyzRouter** — một endpoint tương thích OpenAI cho mọi công cụ lập trình AI của bạn.
+
+- **Hơn 40 nhà cung cấp, hơn 100 mô hình**: Claude Code, Codex, Cursor, Copilot, Cline…
+- **Bộ định tuyến thông minh 3 tầng**: gói đăng ký → API giá rẻ → hạn mức miễn phí, tự động chuyển khi bị giới hạn tốc độ
+- **Chuyển đổi định dạng thời gian thực**: OpenAI ↔ Claude ↔ Gemini
+- **RTK tiết kiệm token** — giảm chi phí tới ~70%
+- **Bảng theo dõi hạn mức trực tiếp, xoay vòng nhiều tài khoản**, chạy trên Docker/VPS — dữ liệu nằm hoàn toàn trên máy bạn
+
+```bash
+npm install -g xyzrouter && xyzrouter   # request đầu tiên sau 2 phút: http://localhost:20128
+```
+
+Tài liệu đầy đủ: [gitbook/content/vi/](gitbook/content/vi/). ⭐ Nếu XyzRouter giúp bạn tiết kiệm, hãy tặng một sao!
+
+<a name="-readme-日本語"></a>
+### 🇯🇵 README (日本語)
+
+**⚡ XyzRouter** — すべての AI コーディングツールを1つの OpenAI 互換エンドポイントに統合。
+
+- **40以上のプロバイダー・100以上のモデル**: Claude Code、Codex、Cursor、Copilot、Cline など
+- **3段階スマートルーティング**: サブスク → 安価なAPI → 無料枠。レート制限時はシームレスに自動切替
+- **フォーマット変換**: OpenAI ↔ Claude ↔ Gemini をリアルタイムで相互変換
+- **RTK トークン圧縮** でコストを約70%削減
+- **リアルタイムクォータ管理・マルチアカウントローテーション**。Docker/VPS/ローカル自己ホスト対応でデータは手元に残ります
+
+```bash
+npm install -g xyzrouter && xyzrouter   # 2分で最初のリクエスト: http://localhost:20128
+```
+
+詳細ドキュメント: [gitbook/content/ja/](gitbook/content/ja/)。⭐ 役に立ったらスターをお願いします！
