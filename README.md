@@ -12,10 +12,38 @@ Claude Code · Codex · Cursor · Copilot · Cline · OpenCode · Gemini CLI · 
 [![Node](https://img.shields.io/badge/node-18+-339933?style=flat-square&logo=node.js&logoColor=white)](https://nodejs.org)
 [![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](LICENSE)
 [![Docker](https://img.shields.io/badge/docker-xyz%2Fxyzrouter-2496ED?style=flat-square&logo=docker&logoColor=white)](https://hub.docker.com/r/xyz/xyzrouter)
+[![npm](https://img.shields.io/npm/v/xyzrouter.svg?style=flat-square&logo=npm&logoColor=white)](https://www.npmjs.com/package/xyzrouter)
+[![Downloads](https://img.shields.io/npm/dm/xyzrouter.svg?style=flat-square)](https://www.npmjs.com/package/xyzrouter)
+[![GitHub last commit](https://img.shields.io/github/last-commit/iloveforduck/xyzrouter?style=flat-square)](https://github.com/iloveforduck/xyzrouter/commits/master)
 
-**English** · [简体中文](README.zh-CN.md)
+**English** · [简体中文](README.zh-CN.md) · [Vietnamese](gitbook/content/vi/) · [日本語](gitbook/content/ja/) · [Español](gitbook/content/es/)
+
+[![Stars](https://img.shields.io/github/stars/iloveforduck/xyzrouter?style=social)](https://github.com/iloveforduck/xyzrouter/stargazers)
+[![Forks](https://img.shields.io/github/forks/iloveforduck/xyzrouter?style=social)](https://github.com/iloveforduck/xyzrouter/network/members)
 
 </div>
+
+---
+
+<!-- TOC -->
+## 📑 Table of Contents
+
+- [🤔 Why XyzRouter?](#-why-xyzrouter)
+- [🔄 How It Works](#-how-it-works)
+- [✨ Key Features](#-key-features)
+- [🌐 Providers](#-providers)
+- [🛠️ Supported CLI Tools](#-supported-cli-tools)
+- [⚡ Quick Start](#-quick-start)
+- [🎯 Use Cases](#-use-cases)
+- [🧑‍💻 CLI Reference](#-cli-reference)
+- [📖 Setup Guides](#-setup-guides)
+- [🔧 Configuration](#-configuration)
+- [📊 API Reference](#-api-reference)
+- [🧩 Agent Skills](#-agent-skills)
+- [🧪 Tech Stack](#-tech-stack)
+- [🗺️ Roadmap](#-roadmap)
+- [🤝 Contributing](#-contributing)
+- [📮 Community & Support](#-community--support)
 
 ---
 
@@ -127,9 +155,35 @@ docker run -d \
   xyz/xyzrouter:latest
 ```
 
+Also available on **GHCR**: `ghcr.io/xyz/xyzrouter` (multi-platform, amd64/arm64).
+
 Default URLs:
 - Dashboard: `http://localhost:20128/dashboard`
 - OpenAI-compatible API: `http://localhost:20128/v1`
+
+## 🧑‍💻 CLI Reference
+
+The `xyzrouter` binary ships with the npm package:
+
+```bash
+xyzrouter                    # Start server + open dashboard
+xyzrouter --port 8080        # Custom port (alias: -p)
+xyzrouter --no-browser       # Don't auto-open the browser
+xyzrouter --skip-update      # Skip the auto-update check
+xyzrouter --help             # All options
+
+# Point local CLI tools at a remote XyzRouter (no local server started):
+npx xyzrouter connect http://<server-host>:20128 --tools claude,codex
+npx xyzrouter connect --reset --tools claude     # undo
+
+# Inspect what each tool on this machine is currently configured to:
+npx xyzrouter show                 # every supported tool
+npx xyzrouter show claude --json   # machine-readable
+```
+
+Supported tools for `connect`: `claude`, `codex`, `opencode`, `droid`, `crush`, `kilo`, `cline`, `pi`, `omp`, or `all`. Original configs are backed up once as `*.bak-xyzrouter`. Password can be passed via `--password` or `XYZROUTER_PASSWORD`.
+
+Full details: [`cli/README.md`](cli/README.md)
 
 ## 🎯 Use Cases
 
@@ -175,7 +229,27 @@ curl http://localhost:20128/v1/chat/completions \
   -H "Authorization: Bearer $XYZROUTER_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{"model": "kr/claude-sonnet-4.5", "messages": [{"role":"user","content":"hi"}]}'
+
+# Claude-format messages endpoint (auto-translated)
+curl http://localhost:20128/v1/messages \
+  -H "x-api-key: $XYZROUTER_API_KEY" \
+  -H "anthropic-version: 2023-06-01" \
+  -H "Content-Type: application/json" \
+  -d '{"model": "kr/claude-sonnet-4.5", "max_tokens": 64, "messages": [{"role":"user","content":"hi"}]}'
 ```
+
+| Endpoint | Format | Purpose |
+|---|---|---|
+| `POST /v1/chat/completions` | OpenAI | Chat (streaming supported) |
+| `POST /v1/messages` | Anthropic | Claude-native clients |
+| `GET /v1/models` | OpenAI | List routed models & combos |
+| `POST /v1/embeddings` | OpenAI | Embeddings via compatible providers |
+
+## 🧩 Agent Skills
+
+XyzRouter ships ready-made [skills](skills/) for AI coding agents — drop them into your agent's skills folder and it can call the router directly:
+
+`xyzrouter` · `xyzrouter-chat` · `xyzrouter-embeddings` · `xyzrouter-image` · `xyzrouter-stt` · `xyzrouter-tts` · `xyzrouter-video` · `xyzrouter-web-fetch` · `xyzrouter-web-search`
 
 ## 🧪 Tech Stack
 
@@ -187,6 +261,30 @@ Next.js 16 · React 19 · SQLite-style JSON store · Native fetch streaming · P
 - [ ] Streaming usage metering per combo
 - [ ] Plugin SDK for custom transformers
 - [ ] One-click deploy templates (Vercel / Fly.io / Railway)
+
+## 🤝 Contributing
+
+Contributions are welcome! Here's the fastest path:
+
+1. Fork the repo and create a branch from `master`
+2. Install deps: `npm install && cp .env.example .env`
+3. Run the dev server: `PORT=20128 npm run dev`
+4. Test your changes — the suite is Playwright-based (`xyzrouter-tests`)
+5. Open a PR with a clear description of *what* and *why*
+
+For bigger ideas, open an issue first so we can align before you write code.
+Architecture deep-dive: [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)
+
+## 📮 Community & Support
+
+| Need | Where |
+|---|---|
+| 🐛 Bug report | [GitHub Issues](https://github.com/iloveforduck/xyzrouter/issues) |
+| 💡 Feature request | [GitHub Discussions](https://github.com/iloveforduck/xyzrouter/discussions) |
+| 📖 Full documentation | [gitbook/](gitbook/) · multilingual (EN · 中文 · 한국어 · ES · VI · JA) |
+| 🔒 Security issue | Please **do not** open a public issue — contact the maintainers privately |
+
+**Star history matters to us** — if this tool saves you tokens, drop a ⭐ on [iloveforduck/xyzrouter](https://github.com/iloveforduck/xyzrouter).
 
 ## 🙏 Acknowledgments
 
