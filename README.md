@@ -51,6 +51,7 @@ Claude Code · Codex · Cursor · Copilot · Cline · OpenCode · Gemini CLI · 
 - [🔧 Configuration](#-configuration)
 - [📊 API Reference](#-api-reference)
 - [🧩 Agent Skills](#-agent-skills)
+- [📦 Publishing to npm](#-publishing-to-npm)
 - [🧪 Tech Stack](#-tech-stack)
 - [🗺️ Roadmap](#-roadmap)
 - [🤝 Contributing](#-contributing)
@@ -297,6 +298,60 @@ curl http://localhost:20128/v1/messages \
 XyzRouter ships ready-made [skills](skills/) for AI coding agents — drop them into your agent's skills folder and it can call the router directly:
 
 `xyzrouter` · `xyzrouter-chat` · `xyzrouter-embeddings` · `xyzrouter-image` · `xyzrouter-stt` · `xyzrouter-tts` · `xyzrouter-video` · `xyzrouter-web-fetch` · `xyzrouter-web-search`
+
+## 📦 Publishing to npm
+
+The `xyzrouter` CLI package lives in the [`cli/`](cli/) folder of this repo. To publish it to the public npm registry you need an **npm account** (this is separate from GitHub — register free at [npmjs.com/signup](https://www.npmjs.com/signup)):
+
+### One-time setup
+
+```bash
+# 1. Create your npm account
+npm adduser          # interactive: username / password / email
+
+# 2. Verify login
+npm whoami
+```
+
+> 🔐 Recommended: enable **2FA** on npm, then use an **Automation token** instead of your password:
+> create it at *npmjs.com → Access Tokens → Generate Token → Automation*, then add it to `~/.npmrc`:
+> ```ini
+> //registry.npmjs.org/:_authToken=npm_xxxxxxxxxxxxxxxx
+> ```
+
+### Publish
+
+```bash
+cd cli
+
+# Dry run first — shows exactly which files will be packed
+npm pack --dry-run
+
+# Build + publish (prepublishOnly runs the build automatically)
+npm publish
+```
+
+Or from the repo root:
+
+```bash
+npm run cli:publish     # shortcut for: npm --prefix cli run publish:cli
+```
+
+### Later releases (version bump)
+
+```bash
+cd cli
+npm version patch       # 0.5.99 -> 0.5.100  (or: minor / major)
+npm publish
+```
+
+### Notes & gotchas
+
+- ⚠️ The unscoped name `xyzrouter` must be **available on npm** — check with `npm view xyzrouter`. If someone already claimed it, rename the package in `cli/package.json` to a scoped name like `@iloveforduck/xyzrouter` and publish with `npm publish --access public`.
+- ❌ You **cannot re-publish over an existing version** — always bump the version first.
+- 🕐 After publishing, allow ~1–2 minutes for the npm CDN to propagate before `npm install -g xyzrouter` works worldwide.
+- 🧪 Test without polluting the registry: `npm link` inside `cli/`, or install a tarball via `npm pack` + `npm i -g ./xyzrouter-*.tgz`.
+- 🏷️ Once live, update the install badge links in this README so they point to the real registry page (they already reference `npmjs.com/package/xyzrouter`).
 
 ## 🧪 Tech Stack
 
