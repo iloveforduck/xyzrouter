@@ -55,7 +55,7 @@ Claude Code · Codex · Cursor · Copilot · Cline · OpenCode · Gemini CLI · 
 - [🗺️ Roadmap](#-roadmap)
 - [🤝 Contributing](#-contributing)
 - [📮 Community & Support](#-community--support)
-- [🌍 Multilingual README](#-readme--multilingual) *(中文 · RU · DE · FR · ES · AR · FA · VI · 日本語)*
+- [🌍 Multilingual README](##-readme--multilingual) *(中文 · RU · DE · FR · ES · AR · FA · VI · 日本語)*
 
 ---
 
@@ -354,6 +354,7 @@ If XyzRouter saved your quota today — star it ⭐
 ---
 
 <!-- MULTILINGUAL_README -->
+<a name="-readme-multilingue"></a>
 ## 🌍 README — Multilingual
 
 Every section below is a condensed version of this README in your language. The full docs for each language live in [`gitbook/content/`](gitbook/).
